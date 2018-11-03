@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SidetoSide : MonoBehaviour {
-    float dirX, moveSpeed = 2f;
+    float dirX, moveSpeed = 3f;
     bool moveright = true; 
 	// Use this for initialization
 	void Update () {

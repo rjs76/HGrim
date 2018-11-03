@@ -7,6 +7,9 @@ public class MovementNOW : MonoBehaviour {
     public int speed;
     public float jump;
     bool OnGround = true;
+
+    public Transform spawnpoint;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -32,6 +35,14 @@ public class MovementNOW : MonoBehaviour {
         {
             OnGround = true;
         }
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            respawn();
+        }
+        if (collision.gameObject.tag.Equals("Death"))
+        {
+            respawn();
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -39,6 +50,11 @@ public class MovementNOW : MonoBehaviour {
         {
             OnGround = false;
         }
+    }
+
+    public void respawn()
+    {
+        this.transform.position = spawnpoint.position;
 
     }
 

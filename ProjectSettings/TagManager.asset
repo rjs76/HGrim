@@ -8,6 +8,8 @@ TagManager:
   - Fallplatform
   - Fall2
   - boss
+  - Death
+  - Enemy
   layers:
   - Default
   - TransparentFX
