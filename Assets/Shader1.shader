@@ -9,7 +9,8 @@
 	SubShader
 	{
 
-		Cull off 
+		Cull Off 
+		Blend One OneMinusSrcAlpha
 
 		Pass{
 			
@@ -42,13 +43,19 @@
 				half4 c = tex2D(_MainTex, i.uv);
 				c.rgb *= c.a; 
 				half4 outlineC = _Color;
+				//outline color transperacy
 				outlineC.a *= ceil(c.a);
 				outlineC.rgb *= outlineC.a;
 
+				//color pixels
 				fixed upAlpha = tex2D(_MainTex, i.uv + fixed2(0, _MainTex_TexelSize.y)).a;
 				fixed downAlpha = tex2D(_MainTex, i.uv + fixed2(0, _MainTex_TexelSize.y)).a;
 				fixed rightAlpha = tex2D(_MainTex, i.uv + fixed2(_MainTex_TexelSize.x, 0)).a;
 				fixed leftAlpha = tex2D(_MainTex, i.uv + fixed2(_MainTex_TexelSize.x, 0)).a;
+				//fixed upAlpha = 0;
+				//fixed downAlpha = 0;
+				//fixed rightAlpha = 0;
+				//fixed leftAlpha = 0;
 
 				return lerp(outlineC, c, ceil(upAlpha * downAlpha * rightAlpha * leftAlpha));
 				 

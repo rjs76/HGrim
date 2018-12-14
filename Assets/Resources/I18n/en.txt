@@ -1,0 +1,4 @@
+﻿Play Game=Jugar Juego
+Options=Opciones
+Quit=Dejar
+Back=Regresso
