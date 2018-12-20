@@ -39,6 +39,7 @@ public class MovementNOW : MonoBehaviour {
         if (collision.gameObject.CompareTag("platform"))
         {
             OnGround = true;
+            animator.SetBool("IsJumping", true);
         }
         if (collision.gameObject.tag.Equals("Enemy"))
         {
@@ -49,6 +50,13 @@ public class MovementNOW : MonoBehaviour {
             respawn();
         }
     }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
+        OnGround = false;
+    }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("platform"))
