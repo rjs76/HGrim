@@ -7,6 +7,8 @@ public class MovementNOW : MonoBehaviour {
     public int speed;
     public float jump;
     bool OnGround = true;
+    public Animator animator;
+    //float horizontalmove=0f;
 
     public Transform spawnpoint;
 
@@ -17,9 +19,11 @@ public class MovementNOW : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //Horizontal Movement
+         //Horizontal Movement
         float movex = Input.GetAxisRaw("Horizontal");
         rb2d.velocity = new Vector2(movex * speed, rb2d.velocity.y);
+        //animator
+        animator.SetFloat("Speed", Mathf.Abs(movex));
 
         if (Input.GetKeyDown(KeyCode.Space) && OnGround)
         {
