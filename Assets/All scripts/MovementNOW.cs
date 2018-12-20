@@ -23,7 +23,8 @@ public class MovementNOW : MonoBehaviour {
         float movex = Input.GetAxisRaw("Horizontal");
         rb2d.velocity = new Vector2(movex * speed, rb2d.velocity.y);
         //animator
-        animator.SetFloat("Speed", Mathf.Abs(movex));
+        animator.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
+        Debug.Log(animator.GetFloat("Speed"));
 
         if (Input.GetKeyDown(KeyCode.Space) && OnGround)
         {
