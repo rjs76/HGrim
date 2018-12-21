@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
+
 
 public class MovementNOW : MonoBehaviour {
     private Rigidbody2D rb2d;
@@ -53,6 +55,10 @@ public class MovementNOW : MonoBehaviour {
         {
             respawn();
         }
+        //if (collision.gameObject.tag.Equals("warp"))
+      //  {
+      //      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      //  }
     }
 
    // public void OnLanding()

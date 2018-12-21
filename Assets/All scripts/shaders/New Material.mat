@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: New Material
   m_Shader: {fileID: 4800000, guid: 4f9b3e0b96984d74eaa753d710acc0cf, type: 3}
@@ -24,4 +24,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.37078288, g: 0.8096234, b: 0.9338235, a: 0.741}
+    - _Color: {r: 1, g: 0.16509432, b: 0.21618629, a: 0.741}
