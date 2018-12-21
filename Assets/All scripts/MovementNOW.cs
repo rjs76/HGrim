@@ -24,11 +24,15 @@ public class MovementNOW : MonoBehaviour {
         rb2d.velocity = new Vector2(movex * speed, rb2d.velocity.y);
         //animator
         animator.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
+
         Debug.Log(animator.GetFloat("Speed"));
+
+        animator.SetFloat("Jumping", Mathf.Abs(rb2d.velocity.y));
 
         if (Input.GetKeyDown(KeyCode.Space) && OnGround)
         {
             rb2d.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+            
         }
 
     }
@@ -51,16 +55,17 @@ public class MovementNOW : MonoBehaviour {
         }
     }
 
-    public void OnLanding()
-    {
-        animator.SetBool("IsJumping", false);
-        OnGround = false;
-    }
+   // public void OnLanding()
+   // {
+  //      animator.SetBool("IsJumping", false);
+   //     OnGround = false;
+  //  }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("platform"))
         {
+            animator.SetBool("IsJumping", false);
             OnGround = false;
         }
     }
