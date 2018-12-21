@@ -29,7 +29,7 @@ public class buttondestroyer : MonoBehaviour {
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag ("destroy1");
         foreach (GameObject target in gameObjects)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             GameObject.Destroy(target);
         }
     }
