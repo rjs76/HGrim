@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
 
-
-public class MovementNOW : MonoBehaviour {
+public class Move2 : MonoBehaviour {
     private Rigidbody2D rb2d;
     public int speed;
     public float jumpForce;
@@ -20,7 +18,7 @@ public class MovementNOW : MonoBehaviour {
 
     public Transform groundCheckPoint;
     public float groundCheckRadius;
-    public LayerMask whatIsGround;
+    public LayerMask whatisGround;
 
     void Start()
     {
@@ -28,9 +26,10 @@ public class MovementNOW : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
-        //OnGround = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
+        //OnGround = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatisGround);
 
         //Horizontal Movement
         float movex = Input.GetAxisRaw("Horizontal");
@@ -60,14 +59,13 @@ public class MovementNOW : MonoBehaviour {
 
         animator.SetFloat("Jumping", Mathf.Abs(rb2d.velocity.y));
 
-       // if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+        // if (Input.GetKeyDown(KeyCode.Space) && OnGround)
         //{
-         //   rb2d.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
-            
+        //   rb2d.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+
         //}
 
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -85,16 +83,16 @@ public class MovementNOW : MonoBehaviour {
             respawn();
         }
         //if (collision.gameObject.tag.Equals("warp"))
-      //  {
-      //      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-      //  }
+        //  {
+        //      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //  }
     }
 
-   // public void OnLanding()
-   // {
-  //      animator.SetBool("IsJumping", false);
-   //     OnGround = false;
-  //  }
+    // public void OnLanding()
+    // {
+    //      animator.SetBool("IsJumping", false);
+    //     OnGround = false;
+    //  }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -112,3 +110,4 @@ public class MovementNOW : MonoBehaviour {
     }
 
 }
+
