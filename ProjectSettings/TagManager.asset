@@ -13,6 +13,8 @@ TagManager:
   - boss
   - warp
   - destroy2
+  - Player2
+  - destroy3
   layers:
   - Default
   - TransparentFX
